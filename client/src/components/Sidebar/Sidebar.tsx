@@ -19,6 +19,7 @@ const Item = styled(ListGroup.Item)`
     padding: 20px;
     ${props => props.highlighted === 'true' && css`
         color: white;
+        font-weight: bold;
   `}
 `;
 

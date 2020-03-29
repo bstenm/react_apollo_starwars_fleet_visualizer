@@ -13,4 +13,6 @@ COPY .  /usr/src/app/
 
 EXPOSE 4000
 
-CMD [ "yarn", "start" ]
+RUN yarn build
+
+CMD [ "node", "dist/" ]

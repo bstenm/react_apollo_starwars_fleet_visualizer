@@ -1,0 +1,23 @@
+version: "3"
+services:
+  server_dev:
+    image: server:dev
+    container_name: server_dev
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"

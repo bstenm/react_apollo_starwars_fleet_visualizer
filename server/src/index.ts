@@ -15,7 +15,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const typeDefs = `
     type Query {
-        spaceships: [Spaceship]!
+        getSpaceships: [Spaceship]!
     }
 
     type Mutation {
@@ -33,7 +33,7 @@ const typeDefs = `
 
 const resolvers = {
     Query: {
-        async spaceships() {
+        async getSpaceships() {
             return await Model.find().exec();
         },
     },

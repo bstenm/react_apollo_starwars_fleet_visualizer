@@ -13,6 +13,8 @@ COPY .  /usr/src/app/
 
 EXPOSE 4000
 
+# compile typescript
 RUN yarn build
 
+# execute built script
 CMD [ "node", "dist/" ]

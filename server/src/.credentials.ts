@@ -1,0 +1,1 @@
+export const mongoAtlasPassword = '43elsM5iPcxuA1yE';

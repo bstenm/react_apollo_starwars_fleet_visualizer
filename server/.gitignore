@@ -1,0 +1,8 @@
+# sensitive data
+.credentials
+
+node_modules
+dist
+
+src/**/*.js
+src/**/*.map

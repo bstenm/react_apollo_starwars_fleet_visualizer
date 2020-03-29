@@ -1,0 +1,38 @@
+{
+    "name": "generic_graphql_server",
+    "version": "1.0.0",
+    "description": "A generic graphql server with authentication and more",
+    "main": "index.js",
+    "scripts": {
+        "start": "yarn build:live",
+        "build": "rimraf dist && tsc -p .",
+        "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+        "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --project tsconfig.json",
+        "pretest": "yarn lint",
+        "test": "jest --watch",
+        "coverage": "jest --coverage"
+    },
+    "author": "Bertrand Steinmetz",
+    "license": "ISC",
+    "dependencies": {
+        "graphql-yoga": "1.16.7",
+        "mongoose": "^5.9.6",
+        "uuid": "^3.3.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.18",
+        "@types/node": "^12.7.3",
+        "@types/uuid": "^3.4.5",
+        "jest": "^24.9.0",
+        "nodemon": "^1.19.1",
+        "prettier": "^1.18.2",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^24.0.2",
+        "ts-node": "^8.3.0",
+        "tslint": "^5.19.0",
+        "tslint-config-airbnb": "^5.11.1",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-plugin-prettier": "^2.0.1",
+        "typescript": "^3.6.2"
+    }
+}

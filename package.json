@@ -1,0 +1,14 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bstenm/mern-app.git",
+  "author": "Bertrand Steinmetz <bstenm@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"cd server && yarn start\" \"cd client && yarn start\""
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}

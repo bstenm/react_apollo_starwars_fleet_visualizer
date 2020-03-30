@@ -19,6 +19,7 @@ const typeDefs = `
     }
 
     type Mutation {
+        addItems(names: [String]): [String]
         addItem(name: String): Spaceship!
         addShot(id: String): Spaceship!
         deleteItem(id: String): Spaceship!
@@ -38,6 +39,11 @@ const resolvers = {
         },
     },
     Mutation: {
+        async addItems(_, { names }) {
+            const data = names.map(name => ({ shot: 0, name }));
+            await Model.insertMany(data);
+            return names;
+        },
         async addItem(_, { name }) {
             const data = new Model();
             if (!name || name.length === 0) {

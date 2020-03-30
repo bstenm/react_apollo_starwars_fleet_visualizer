@@ -3,7 +3,11 @@ import difference from 'lodash/difference';
 import React, { memo, PropsWithChildren } from 'react';
 
 import Spaceship from '../Spaceship';
-import { spaceshipColors, initialXPosition } from '../../config';
+import { spaceshipColors } from '../../config';
+
+const generateRandomCoord = (scope: number) => {
+    return Math.random() * (Math.random() >= 0.5 ? -1 : 1) * scope;
+};
 
 const Fleet: React.FC<{
     items: string[],
@@ -20,13 +24,14 @@ const Fleet: React.FC<{
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
                 {items.map((item, i) => {
-                    const xPosition: number = initialXPosition + (i * 1.8);
-                    const colorIndex: number = Math.round(Math.random() * spaceshipColors.length);
+                    const x: number = generateRandomCoord(4);
+                    const y: number = generateRandomCoord(2);
+                    const z: number = generateRandomCoord(1);
                     return <Spaceship
                         id={item}
                         key={item}
-                        color={spaceshipColors[colorIndex]}
-                        position={[xPosition, 0, 0]}
+                        color={spaceshipColors[i % spaceshipColors.length]}
+                        position={[x, y, z]}
                         onShoot={onClickItem}
                         onPointerOut={onPointerOut}
                         onPointerOver={onPointerOver}

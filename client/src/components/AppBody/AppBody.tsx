@@ -1,12 +1,14 @@
-import React, { useState, useMemo } from 'react';
-import styled, { css } from 'styled-components';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import styled, { css } from 'styled-components';
+import React, { useState, useMemo } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 import Fleet from '../Fleet';
 import Sidebar from '../Sidebar';
-import { ADD_SHOT } from '../../config/mutations';
+import { apiPath } from '../../config';
 import { GET_ALL_SPACESHIPS } from '../../config/queries';
+import { ADD_SHOT, ADD_ITEMS } from '../../config/mutations';
 import { SpaceshipData } from '../../types';
 
 
@@ -46,6 +48,12 @@ const Component: React.FC = () => {
         }],
     });
 
+    const [addItems] = useMutation(ADD_ITEMS, {
+        refetchQueries: (_) => [{
+            query: GET_ALL_SPACESHIPS
+        }],
+    });
+
     const spaceshipIds: string[] = useMemo(
         () => data ? data.spaceships.map((e: SpaceshipData) => e.id) : [],
         [data]
@@ -53,6 +61,13 @@ const Component: React.FC = () => {
 
     const onClickItem = (id: string) => {
         addShot({ variables: { id } });
+    }
+
+    const loadData = async () => {
+        const { data } = await axios.get(apiPath);
+        console.log(data.results);
+        const names = data.results.map((e: any) => e.name);
+        addItems({ variables: { names } });
     }
 
     if (loading) return (
@@ -77,7 +92,15 @@ const Component: React.FC = () => {
 
     if (!data || !data.spaceships || !data.spaceships.length) return (
         <AppBody>
-            <div>No data found</div>
+            <Message>
+                <p>No data found</p>
+                <Button
+                    variant="primary"
+                    onClick={loadData}
+                >
+                    Get spaceships
+                </Button>
+            </Message>
         </AppBody>
     );
 

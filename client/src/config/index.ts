@@ -1,13 +1,12 @@
 export const developmentMode = process.env.NODE_ENV === 'development';
 
-export const initialXPosition = 1.5;
-
 export const spaceshipColors: string[] = [
-    'yellow',
+    'orange',
     'brown',
     'purple',
-    'hotpink',
     'green',
     'blue',
-    'orange',
+    'red',
 ];
+
+export const apiPath = 'https://swapi.co/api/starships/?search=wing';

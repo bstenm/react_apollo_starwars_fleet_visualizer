@@ -8,3 +8,9 @@ export const ADD_SHOT = gql`
         }
   }
 `;
+
+export const ADD_ITEMS = gql`
+    mutation addItems($names: [String]){
+        addItems(names:$names)
+    }
+`;

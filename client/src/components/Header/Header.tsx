@@ -15,12 +15,13 @@ position: absolute;
 `;
 
 const Title = styled.div`
-    padding-top: 15px;
+    padding: 15px;
     text-align: center;
 `;
 
 const Logo = styled.div`
     float: left;
+    position: absolute;
 `;
 
 export default () => (

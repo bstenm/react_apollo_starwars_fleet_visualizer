@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { SpaceshipData } from '../../types';
 
 const Sidebar = styled.div`
-    width: 300px;
+    width: 350px;
     background: #2A2A2A;
     text-align: left;
     padding: 20px;

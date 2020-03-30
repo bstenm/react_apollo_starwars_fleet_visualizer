@@ -9,7 +9,7 @@ const Sidebar = styled.div`
     background: #2A2A2A;
     text-align: left;
     padding: 20px;
-    padding-top: 50px;
+    padding-top: 55px;
     color: #CCC;
 `;
 

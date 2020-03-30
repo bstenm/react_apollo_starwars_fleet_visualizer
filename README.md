@@ -9,7 +9,7 @@
   ```git clone git@github.com:bstenm/starwars_fleet_visualizer.git```  
   ```cd starwars_fleet_visualizer```  
   
-  2. Launch the front end  
+  2. Launch the back end  
   ```cd server```  
   ```docker-compose build```  
   ```docker-compose up```  

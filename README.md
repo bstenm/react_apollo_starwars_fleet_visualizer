@@ -20,7 +20,7 @@
   ```docker-compose build```  
   ```docker-compose up```  
   
-  Wait until you see "connected to database" and leave the terminal open  
+  Wait until you see "connected to database" somewhere in the logs and leave the terminal open  
   
   ##### 3. Launch the front end  
 

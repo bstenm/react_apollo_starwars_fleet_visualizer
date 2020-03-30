@@ -19,7 +19,8 @@
   ```cd server```  
   ```docker-compose build```  
   ```docker-compose up```  
-    Wait until you see "connected to database" and leave the terminal open  
+  
+  Wait until you see "connected to database" and leave the terminal open  
   
   ##### 3. Launch the front end  
 
@@ -28,5 +29,6 @@
   ```cd ../client```  
   ```docker-compose build```  
   ```docker-compose up```  
-    Then open your browser and navigate to ```locahost:5000```
+  
+  Then open your browser and navigate to ```locahost:5000```
   

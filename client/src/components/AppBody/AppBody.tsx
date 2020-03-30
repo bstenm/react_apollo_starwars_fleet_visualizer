@@ -93,7 +93,6 @@ const Component: React.FC = () => {
             </Visualization>
             <Sidebar
                 items={data.spaceships}
-                onClickItem={onClickItem}
                 highlightedItem={highlightedItem}
             />
         </AppBody>

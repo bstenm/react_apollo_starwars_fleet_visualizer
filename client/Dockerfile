@@ -8,9 +8,10 @@ RUN yarn global  add serve
 CMD serve -s build
 EXPOSE 5000
 
+# install and cache app dependencies
 COPY package.json package.json
 COPY yarn.lock yarn.lock
-RUN yarn install
+RUN yarn install --silent
 
 # copy all project files into the image
 COPY .  /usr/src/app/

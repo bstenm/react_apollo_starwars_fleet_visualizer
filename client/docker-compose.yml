@@ -1,26 +1,9 @@
 version: '3'
 
 services:
-  mern_app_dev:
-    image: mern_app:dev
-    container_name: mern_app_dev
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
-    ports:
-      - '3000:3000'
-    environment:
-      - NODE_ENV=development
-
-  mern_app_prod:
-    image: mern_app:prod
-    container_name: mern_app_prod
-    build:
-      context: .
-      dockerfile: Dockerfile
+  client:
+    container_name: client
+    build: .
     ports:
       - '5000:5000'
     environment:

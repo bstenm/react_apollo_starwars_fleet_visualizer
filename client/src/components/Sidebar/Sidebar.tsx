@@ -8,18 +8,16 @@ const Sidebar = styled.div`
     width: 300px;
     background: #2A2A2A;
     text-align: left;
-    padding: 30px;
+    padding: 20px;
     padding-top: 50px;
     color: #CCC;
 `;
 
 const Item = styled(ListGroup.Item)`
     background: #555;
-    cursor: pointer;
-    padding: 20px;
+    padding: 10px;
     ${props => props.highlighted === 'true' && css`
         color: white;
-        font-weight: bold;
   `}
 `;
 
@@ -29,15 +27,13 @@ const RocketIcon = styled.span`
 
 const Component: React.FC<{
     items: SpaceshipData[],
-    onClickItem: Function,
     highlightedItem: string,
-}> = ({ items, onClickItem, highlightedItem }) => (
+}> = ({ items, highlightedItem }) => (
     <Sidebar>
         <ListGroup variant="flush">
             {items.map(({ id, name, shot }) =>
                 <Item
                     key={name}
-                    onClick={() => onClickItem(name)}
                     highlighted={(highlightedItem === id).toString()}
                 >
                     {name} > {shot || 0}

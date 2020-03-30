@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import logo from './logo.jpeg';
 
 const Header = styled.header`
 width: 100%;
-padding: 10px;
 background-color: #2A2A2A;
 min-height: 5vh;
 align-items: center;
@@ -15,16 +15,21 @@ position: absolute;
 `;
 
 const Title = styled.div`
+    padding-top: 15px;
     text-align: center;
 `;
 
-export default () => {
+const Logo = styled.div`
+    float: left;
+`;
 
-    return (
-        <Header>
-            <Title>
-                StarWars fleet visualization
-            </Title>
-        </Header>
-    );
-};
+export default () => (
+    <Header>
+        <Logo>
+            <img src={logo} alt="logo" width="80px" />
+        </Logo>
+        <Title>
+            StarWars fleet visualization
+        </Title>
+    </Header>
+);

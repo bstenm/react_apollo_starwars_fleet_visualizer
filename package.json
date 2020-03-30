@@ -1,8 +1,8 @@
 {
-  "name": "mern",
+  "name": "starwars_flee_visualizer",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:bstenm/mern-app.git",
+  "repository": "git@github.com:bstenm/starwars_fleet_visualizer.git",
   "author": "Bertrand Steinmetz <bstenm@hotmail.com>",
   "license": "MIT",
   "scripts": {

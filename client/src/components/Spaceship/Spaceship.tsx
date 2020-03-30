@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { ReactThreeFiber } from 'react-three-fiber';
 
-const Spaceship: React.FC<{
+const Component: React.FC<{
     id: string,
     color: string,
     // _TODO
@@ -26,4 +26,4 @@ const Spaceship: React.FC<{
     );
 };
 
-export default Spaceship;
+export default Component;

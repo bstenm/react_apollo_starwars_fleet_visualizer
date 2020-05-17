@@ -31,9 +31,4 @@
   ```docker-compose up```  
   
   Then open your browser and navigate to ```locahost:5000```
-  
-### Possible Imppovements  
-
-1. Add the ability to search for spaceships according to a search term
-
-2. Add a resilience number to each spaceship, that decreases each time it is hit until it is removed from the display
+ 
